@@ -2,7 +2,8 @@
  * Making music using Eye
  * by: Ashraf Minhaj
  * mail: ashraf_minhaj@yahoo.com
- * license: General Public License
+ * blog: ashrafminhajfb.blogspot.com
+ * Copyright Ashraf Minhaj under GPLv3
  */
 
 //connect sensors on
@@ -31,20 +32,20 @@ void loop()
   int val2 = analogRead(sen2);
 
   //print what's been read by the sensors
-  Serial.println(val1);
+  //Serial.println(val1);
 
 
-  if(val1 < 750 && val2 < 750)
+  if(val1 < 750 && val2 < 750) // if closed eye detected (both eyes)
   {
-    tone(buz1, 1000, 10);
+    tone(buz1, 1000, 10);  //(speaker name, frequency, delay)
   }
 
-  else if(val1 < 750)
+  else if(val1 < 750)  //one eye
   {
   tone(buz1, 2000, 100);
   }
 
-  else if(val2 < 750)
+  else if(val2 < 750)  //another eye
   {
     tone(buz1, 1500, 100);
   }
